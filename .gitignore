@@ -1,0 +1,7 @@
+token_authentication/__pycache__
+example_api/__pycache__
+djang0_token_authentication/__pycache__
+
+token_authentication/migrations
+example_api/migrations
+djang0_token_authentication/migrations
