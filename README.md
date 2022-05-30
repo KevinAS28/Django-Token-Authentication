@@ -1,5 +1,5 @@
 ## Installation
-- Copy the directory `authenticaiton` app to your Django project
+- Copy the directory `token_authenticaiton` app to your Django project
 - Insert `authentication` to the INSTALLED_APPS in your main project setttings (settings.py)
 - Create the migration: `python manage.py makemigrations token_authentication`
 - Apply the migration: `python manage.py migrate`
