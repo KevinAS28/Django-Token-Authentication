@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"someone\",\r\n    \"password\": \"secret\",\r\n    \"role\": 1\r\n}",
+					"raw": "{\r\n    \"username\": \"user1\",\r\n    \"password\": \"user1\",\r\n    \"role_name\": \"user\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,22 +20,85 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/token_authentication/register_user",
+					"raw": "http://{{HOST}}/token_authentication/register_user",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{HOST}}"
 					],
-					"port": "9090",
 					"path": [
 						"token_authentication",
 						"register_user"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Register new user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user0\",\r\n    \"password\": \"user0\",\r\n    \"role\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/token_authentication/register_user",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"token_authentication",
+								"register_user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Jun 2022 09:21:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.7"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true\n}"
+				}
+			]
 		},
 		{
 			"name": "Create a role",
@@ -44,7 +107,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"role_name\": \"developer\"\r\n}",
+					"raw": "{\r\n    \"role_name\": \"user\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -52,22 +115,85 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/token_authentication/create_role",
+					"raw": "http://{{HOST}}/token_authentication/create_role",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{HOST}}"
 					],
-					"port": "9090",
 					"path": [
 						"token_authentication",
 						"create_role"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create a role",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role_name\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/token_authentication/create_role",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"token_authentication",
+								"create_role"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Jun 2022 09:21:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.7"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"role\": {\n        \"id\": 1,\n        \"role_name\": \"user\"\n    }\n}"
+				}
+			]
 		},
 		{
 			"name": "Example API",
@@ -111,7 +237,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"someone\",\r\n    \"password\": \"secret\"\r\n}",
+					"raw": "{\r\n    \"username\": \"admin0\",\r\n    \"password\": \"admin0\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -119,22 +245,206 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:9090/token_authentication/get_token",
+					"raw": "http://{{HOST}}/token_authentication/get_token",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{HOST}}"
 					],
-					"port": "9090",
 					"path": [
 						"token_authentication",
 						"get_token"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user0\",\r\n    \"password\": \"user0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/token_authentication/get_token",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"token_authentication",
+								"get_token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 01 Jun 2022 09:21:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.7"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "122"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 0,\n    \"token\": \"280112fca7b894296bbdbfa934dd5b32d03d6b938ba1a6d59409869d400ae6495e9b622784ad7b28cf472f0a61697a64\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Refresh token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://{{HOST}}/token_authentication/refresh_token",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"token_authentication",
+						"refresh_token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Refresh token",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://{{HOST}}/token_authentication/refresh_token",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"token_authentication",
+								"refresh_token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 07 Jun 2022 05:08:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.7"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "109"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"10f9a9aeac876e2645303facd5814f5c21cab611fc63b90983e3596ba935bf8b9096e8912def9a1ebe09d2ee7741e3e4\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "172.26.64.203:8000",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "ff4e2cb4861514431c3f6dcd675a0aa41149142d8a794f22d03740c7172aa883043c2362192646a31dc9cf067adf8589",
+			"type": "default"
 		}
 	]
 }
