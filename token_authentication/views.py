@@ -52,7 +52,7 @@ def register_user(request):
         elif 'role_name' in data:
             role = models.UserRole.objects.get(role_name=data['role_name']) 
         else:
-            return JsonResponse({'success': False, 'error': 'Please provide role_name or role_name'})
+            return JsonResponse({'success': False, 'error': 'Please provide role_id or role_name'})
 
         userauth = models.UserAuthentication(
             username=username,
