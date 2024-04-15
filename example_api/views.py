@@ -17,4 +17,7 @@ def helloworld(request:WSGIRequest):
             return {'text': 'Your authentication is correct, but try put a magic word in your text field'}
     else:
         return {'text': 'Your authentication is correct, but there is no "text" field in your JSON request'}
-    
+
+@token_auth(roles=['user'], get_user=True)
+def test(user: ta_models.UserAuthentication, request: WSGIRequest):
+    return JsonResponse({'User': model_to_dict(user)})
